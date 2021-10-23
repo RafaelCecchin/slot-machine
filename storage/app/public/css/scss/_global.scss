@@ -1,0 +1,42 @@
+$small: "450px";
+$smartphone: "700px";
+$tablet: "700px";
+$desktop: "1280px";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    width: 100%;
+    height: 2.6rem;
+    border-radius: 0.5rem;
+    background-color: #fdd11c;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    transition: transform .2s, background-color .5s;
+
+    &:hover, &:focus {
+        transform: translateY(-.15rem);
+        background-color: #ffd114;
+    }
+}
+
+.hidden-title {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    color: transparent;
+    line-height: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
