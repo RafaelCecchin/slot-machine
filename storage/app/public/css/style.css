@@ -31,13 +31,16 @@
 body {
   font-family: 'Poppins', sans-serif; }
 
-header {
+.container {
+  max-width: "1280px"; }
+
+.page-login header, .page-register header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
   gap: 1rem; }
-  header > div {
+  .page-login header > div, .page-register header > div {
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -46,26 +49,26 @@ header {
     width: fit-content;
     max-height: fit-content;
     gap: 0.5rem; }
-    header > div h1 {
+    .page-login header > div h1, .page-register header > div h1 {
       font-size: 2.4rem;
       line-height: 1; }
       @media screen and (max-width: 700px) {
-        header > div h1 {
+        .page-login header > div h1, .page-register header > div h1 {
           font-size: 1.8rem; } }
-    header > div .slot-machine-icon {
+    .page-login header > div .slot-machine-icon, .page-register header > div .slot-machine-icon {
       width: 7rem; }
       @media screen and (max-width: 700px) {
-        header > div .slot-machine-icon {
+        .page-login header > div .slot-machine-icon, .page-register header > div .slot-machine-icon {
           width: 5rem; } }
-    header > div .money-icon {
+    .page-login header > div .money-icon, .page-register header > div .money-icon {
       max-width: 4rem;
       position: absolute;
       right: 1rem;
       top: 1rem; }
       @media screen and (max-width: 700px) {
-        header > div .money-icon {
+        .page-login header > div .money-icon, .page-register header > div .money-icon {
           max-width: 2.4rem; } }
-  header p {
+  .page-login header p, .page-register header p {
     text-align: center;
     line-height: 1.1; }
 
@@ -137,3 +140,15 @@ header {
       width: calc(50% - 0.5rem); }
     .page-register > section > .container form label:nth-child(7) {
       width: calc(50% - 0.5rem); }
+
+.page-game header {
+  display: block; }
+  .page-game header .btn-admin {
+    margin: 1rem;
+    width: fit-content; }
+    .page-game header .btn-admin.left {
+      float: left; }
+    .page-game header .btn-admin.right {
+      float: right; }
+    .page-game header .btn-admin img {
+      height: 3rem; }

@@ -24,3 +24,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 })->name('register');
+
+Route::get('/game', function () {
+    return view('game');
+})->name('game');

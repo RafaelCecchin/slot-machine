@@ -1,0 +1,22 @@
+.page-game {
+    header {
+        display: block;
+
+        .btn-admin {
+            margin: 1rem;
+            width: fit-content;
+            
+            &.left {
+                float: left;
+            }
+
+            &.right {
+                float: right;
+            }
+
+            img {
+                height: 3rem;
+            }
+        }
+    }
+}
