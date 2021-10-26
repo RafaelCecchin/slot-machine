@@ -79,7 +79,7 @@ body {
   .form.register > div label, .form.login > div label {
     display: block;
     width: 100%; }
-    .form.register > div label span, .form.login > div label span {
+    .form.register > div label .caption, .form.login > div label .caption {
       font-weight: 600;
       color: #222222;
       display: block; }
@@ -91,31 +91,40 @@ body {
       height: 2.6rem;
       border-radius: 0.6rem;
       padding-left: 1rem;
-      padding-right: 1rem; }
+      padding-right: 1rem;
+      box-sizing: border-box; }
+    .form.register > div label .invalid-feedback, .form.login > div label .invalid-feedback {
+      display: block;
+      text-align: center; }
+      .form.register > div label .invalid-feedback strong, .form.login > div label .invalid-feedback strong {
+        color: red;
+        font-weight: 400; }
 
 .form.register .btn, .form.login .btn {
   margin-top: 1rem; }
+
+.page-login footer, .page-register footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .page-login footer a, .page-register footer a {
+    margin-top: 0.3rem;
+    text-decoration: none;
+    color: #000000; }
+    .page-login footer a:hover, .page-login footer a:focus, .page-register footer a:hover, .page-register footer a:focus {
+      transform: translateY(-0.1rem); }
 
 .page-login > section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding: 2rem 0; }
   .page-login > section > .container {
     max-width: 90%;
     margin: auto;
     width: 30rem; }
-    .page-login > section > .container footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; }
-      .page-login > section > .container footer a {
-        margin-top: 0.3rem;
-        text-decoration: none;
-        color: #000000; }
-        .page-login > section > .container footer a:hover, .page-login > section > .container footer a:focus {
-          transform: translateY(-0.1rem); }
 
 .page-register > section {
   min-height: 100vh;
@@ -125,30 +134,32 @@ body {
   .page-register > section > .container {
     max-width: 90%;
     margin: auto;
-    width: 33rem; }
-    .page-register > section > .container form label:nth-child(1) {
-      width: calc(50% - 0.5rem); }
-    .page-register > section > .container form label:nth-child(2) {
-      width: calc(50% - 0.5rem); }
-    .page-register > section > .container form label:nth-child(3) {
-      width: calc(40% - 0.5rem); }
-    .page-register > section > .container form label:nth-child(4) {
-      width: calc(60% - 0.5rem); }
-    .page-register > section > .container form label:nth-child(5) {
-      width: calc(100%); }
-    .page-register > section > .container form label:nth-child(6) {
-      width: calc(50% - 0.5rem); }
-    .page-register > section > .container form label:nth-child(7) {
-      width: calc(50% - 0.5rem); }
+    width: 33rem;
+    padding: 2rem 0; }
+    @media screen and (min-width: 450px) {
+      .page-register > section > .container form label:nth-child(1) {
+        width: calc(50% - 0.5rem); }
+      .page-register > section > .container form label:nth-child(2) {
+        width: calc(50% - 0.5rem); }
+      .page-register > section > .container form label:nth-child(3) {
+        width: calc(40% - 0.5rem); }
+      .page-register > section > .container form label:nth-child(4) {
+        width: calc(60% - 0.5rem); }
+      .page-register > section > .container form label:nth-child(5) {
+        width: calc(100%); }
+      .page-register > section > .container form label:nth-child(6) {
+        width: calc(50% - 0.5rem); }
+      .page-register > section > .container form label:nth-child(7) {
+        width: calc(50% - 0.5rem); } }
 
-.page-game header {
+.page-home header {
   display: block; }
-  .page-game header .btn-admin {
+  .page-home header .btn-admin {
     margin: 1rem;
     width: fit-content; }
-    .page-game header .btn-admin.left {
+    .page-home header .btn-admin.left {
       float: left; }
-    .page-game header .btn-admin.right {
+    .page-home header .btn-admin.right {
       float: right; }
-    .page-game header .btn-admin img {
+    .page-home header .btn-admin img {
       height: 3rem; }
