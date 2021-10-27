@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('view-name', 'Register');
 
 @section('content')
 
