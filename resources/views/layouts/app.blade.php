@@ -19,7 +19,7 @@
 
         <!-- Styles -->
         <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
-        <link rel="stylesheet" href="{{Storage::url('css/style.css')}}"/>
+        <link rel="stylesheet" href="{{ Storage::url('css/style.css') }} "/>
     </head>
     <body class="page-{{ Request::path() }}">
         
