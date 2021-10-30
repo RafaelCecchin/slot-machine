@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('view-name', 'Home');
+@section('view-name', 'Home')
 
 @section('content')
 <header>
