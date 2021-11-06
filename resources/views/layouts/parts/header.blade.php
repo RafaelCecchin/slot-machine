@@ -20,6 +20,8 @@
         <!-- Styles -->
         <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
         <link rel="stylesheet" href="{{ Storage::url('css/style.css') }} "/>
+
+        @yield('js-header')
     </head>
     <body class="page-{{ Request::path() }}"> 
         <h1 class="hidden-title">Slot Machine - {{ ucfirst(trans(Request::path())) }}</h1>
