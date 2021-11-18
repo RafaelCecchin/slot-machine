@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
+use App\User;
+use App\Administrator;
+use App\Bettor;
 
 class RegisterController extends Controller
 {
@@ -49,10 +52,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $users = User::all()->count();
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'first-name' => ['required', 'string', 'max:255'],
+            'last-name' => ['required', 'string', 'max:255'],
+            'birthday' => [ !!$users ? 'required' : '', 'date'],
+            'cpf' => [ !!$users ? 'required' : '', 'cpf', 'max:14'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
     }
 
@@ -64,10 +72,41 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $type = User::all()->count() == '0' ? '1' /* Administrator */ : '2' /* User */; 
+        
+        $user = User::create([
+            'first_name' => $data['first-name'],
+            'last_name' => $data['last-name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'id_type' => $type
         ]);
+
+        if ($user) {
+
+            if ($type == 1) {
+                Administrator::create([
+                    'id_user' => $user->id
+                ]);
+            }
+
+            if ($type == 2) {
+                Bettor::create([
+                    'id_user' => $user->id,
+                    'cpf' => $data['cpf'],
+                    'birthday' => $data['birthday'],
+                ]);
+            }
+
+        }
+
+        return $user;
+    }
+
+    public function index() {
+        
+        $hasUser = User::all()->count() != '0'; 
+        
+        return view('auth.register', compact('hasUser'));
     }
 }

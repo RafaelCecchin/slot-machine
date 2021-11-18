@@ -14,37 +14,37 @@
             padding: 2rem 0;
             
             form {
-                label {
+                //label {
                     @media screen and (min-width: $small) {
-                        &:nth-child(1) {
+                        label[for="first-name"] {
                             width: calc(50% - 0.5rem);
                         }
             
-                        &:nth-child(2) {
+                        label[for="last-name"] {
                             width: calc(50% - 0.5rem)
                         }
             
-                        &:nth-child(3) {
+                        label[for="birthday"] {
                             width: calc(40% - 0.5rem);
                         }
             
-                        &:nth-child(4) {
+                        label[for="cpf"] {
                             width: calc(60% - 0.5rem);
                         }
             
-                        &:nth-child(5) {
+                        label[for="email"] {
                             width: calc(100%);
                         }
             
-                        &:nth-child(6) {
+                        label[for="password"] {
                             width: calc(50% - 0.5rem);
                         }
             
-                        &:nth-child(7) {
+                        label[for="password-confirm"] {
                             width: calc(50% - 0.5rem)
                         }
                     }
-                }
+                //}
             }
         }
     }

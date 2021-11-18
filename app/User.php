@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password', 'id_type'
     ];
 
     /**
@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function data()
+    {
+        if ($this->id_type == '1') {
+            return $this->belongsTo('App\Administrator', 'id_user');
+        }
+
+        if ($this->id_type == '2') {
+            return $this->belongsTo('App\Bettor', 'id_user');
+        }
+    }
 }

@@ -15,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::post('/login', 'auth\LoginController@validateLogin');
+
+Route::get('/login', 'auth\LoginController@index')->name('login');
+
+Route::get('/register', 'auth\RegisterController@index')->name('register');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return redirect()->route('home');
 });
+

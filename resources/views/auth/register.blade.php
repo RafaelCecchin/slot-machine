@@ -12,7 +12,7 @@
         <div>
             <label for="first-name">
                 <span class="caption">{{ __("First name") }}</span>
-                <input id="first-name" name="name" type="text"/>
+                <input id="first-name" name="first-name" type="text"/>
                 @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -28,24 +28,31 @@
                     </span>
                 @enderror
             </label>
-            <label for="birthday">
-                <span class="caption">{{ __("Birthday") }}</span>
-                <input id="birthday" name="birthday" type="date"/>
-                @error('birthday')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </label>
-            <label for="cpf">
-                <span class="caption">{{ __("CPF") }}</span>
-                <input id="cpf" name="cpf" type="text"/>
-                @error('cpf')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </label>
+
+            @if($hasUser)
+
+                <label for="birthday">
+                    <span class="caption">{{ __("Birthday") }}</span>
+                    <input id="birthday" name="birthday" type="date"/>
+                    @error('birthday')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </label>
+                
+                <label for="cpf">
+                    <span class="caption">{{ __("CPF") }}</span>
+                    <input id="cpf" name="cpf" type="text"/>
+                    @error('cpf')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </label>
+
+            @endif
+
             <label for="email">
                 <span class="caption">{{ __("E-mail") }}</span>
                 <input id="email" name="email" type="email"/>
@@ -74,6 +81,8 @@
 @endsection
 
 @section('footer-link') 
-    <a href="{{ route('login') }}">Click here to login</a>
+    @if($hasUser)
+        <a href="{{ route('login') }}">Click here to login</a>
+    @endif
 @endsection
 

@@ -137,19 +137,19 @@ body {
     width: 33rem;
     padding: 2rem 0; }
     @media screen and (min-width: 450px) {
-      .page-register > section > .container form label:nth-child(1) {
+      .page-register > section > .container form label[for="first-name"] {
         width: calc(50% - 0.5rem); }
-      .page-register > section > .container form label:nth-child(2) {
+      .page-register > section > .container form label[for="last-name"] {
         width: calc(50% - 0.5rem); }
-      .page-register > section > .container form label:nth-child(3) {
+      .page-register > section > .container form label[for="birthday"] {
         width: calc(40% - 0.5rem); }
-      .page-register > section > .container form label:nth-child(4) {
+      .page-register > section > .container form label[for="cpf"] {
         width: calc(60% - 0.5rem); }
-      .page-register > section > .container form label:nth-child(5) {
+      .page-register > section > .container form label[for="email"] {
         width: calc(100%); }
-      .page-register > section > .container form label:nth-child(6) {
+      .page-register > section > .container form label[for="password"] {
         width: calc(50% - 0.5rem); }
-      .page-register > section > .container form label:nth-child(7) {
+      .page-register > section > .container form label[for="password-confirm"] {
         width: calc(50% - 0.5rem); } }
 
 .page-home header {
