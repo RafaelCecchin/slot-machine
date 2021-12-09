@@ -6,9 +6,9 @@
 @endsection
 
 @section('form') 
-    <form method="POST" class="form login" action="{{ route('login') }}">
+    <!--<form method="POST" class="form login" action="{{ route('login') }}">
         @csrf
-
+        
         <div>
             <label for="email">
                 <span class="caption">{{ __('E-Mail address') }}</span>
@@ -30,10 +30,10 @@
             </label>
         </div>
         <input class="btn" type="submit" value="{{ __("Access") }}"/>
-    </form>
+    </form>-->
 @endsection
 
 @section('footer-link') 
-    <a rel="noreferrer" href="{{ route('register') }}">Click here to register</a>
+    <!--<a rel="noreferrer" href="{{ route('register') }}">Click here to register</a>-->
 @endsection
             

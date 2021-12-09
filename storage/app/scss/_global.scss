@@ -38,14 +38,32 @@ $desktop: "1280px";
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .container {
     max-width: $desktop;
 }
 
-.page-login header, .page-register header {
+.logo-slot-machine {
+
+    .slot-machine-icon {
+        width: 7rem;
+        
+        @media screen and (max-width: $smartphone) {
+            width: 5rem;
+        }
+    }
+
+    .money-icon {
+        top: 0.5rem;
+        right: 2.1rem;
+        width: 3rem;
+        height: auto;
+    }
+}
+
+/*.page-login header, .page-register header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,11 +90,7 @@ body {
         }
 
         .slot-machine-icon {
-            width: 7rem;
-
-            @media screen and (max-width: $smartphone) {
-                width: 5rem;
-            }
+            
         }
 
         .money-icon {
@@ -158,4 +172,4 @@ body {
             transform: translateY(-0.1rem);
         }
     }
-}
+}*/
