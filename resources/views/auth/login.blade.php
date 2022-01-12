@@ -6,34 +6,34 @@
 @endsection
 
 @section('form') 
-    <!--<form method="POST" class="form login" action="{{ route('login') }}">
+    <form method="POST" class="form login" action="{{ route('login') }}">
         @csrf
         
         <div>
-            <label for="email">
-                <span class="caption">{{ __('E-Mail address') }}</span>
-                <input id="email" name="email" type="email"/>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold">{{ __('E-Mail address') }}</label>
+                <input id="email" name="email" type="email" class="form-control rounded" aria-describedby="emailHelp">
                 @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    <span class="d-block invalid-feedback" role="alert">
+                        <strong class="fw-normal">{{ $message }}</strong>
                     </span>
                 @enderror
-            </label>
-            <label for="password">
-                <span class="caption">{{ __('Password') }}</span>
-                <input id="password" name="password" type="password"/>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label fw-bold">{{ __('Password') }}</label>
+                <input id="password" name="password" type="password" class="form-control rounded" aria-describedby="emailHelp">
                 @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                    <span class="d-block invalid-feedback" role="alert">
+                        <strong class="fw-normal">{{ $message }}</strong>
                     </span>
                 @enderror
-            </label>
+            </div>
         </div>
-        <input class="btn" type="submit" value="{{ __("Access") }}"/>
-    </form>-->
+        <input class="btn btn-warning w-100" type="submit" value="{{ __("Access") }}"/>
+    </form>
 @endsection
 
 @section('footer-link') 
-    <!--<a rel="noreferrer" href="{{ route('register') }}">Click here to register</a>-->
+    <a rel="noreferrer" class="d-block m-auto mt-2 w-auto link-dark text-decoration-none" href="{{ route('register') }}">Click here to register</a>
 @endsection
             

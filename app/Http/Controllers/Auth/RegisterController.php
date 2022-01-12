@@ -55,8 +55,8 @@ class RegisterController extends Controller
         $users = User::all()->count();
 
         return Validator::make($data, [
-            'first-name' => ['required', 'string', 'max:255'],
-            'last-name' => ['required', 'string', 'max:255'],
+            'first-name' => ['required', 'string', 'max:255', 'min:4'],
+            'last-name' => ['required', 'string', 'max:255', 'min:4'],
             'birthday' => [ !!$users ? 'required' : '', 'date'],
             'cpf' => [ !!$users ? 'required' : '', 'cpf', 'max:14'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

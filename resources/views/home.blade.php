@@ -2,12 +2,12 @@
 @section('view-name', 'Home')
 
 @section('content')
-<header>
-    <a class="btn-admin left config" href="#">
-        <img src="{{ asset('images/config-vector.svg')}}"/>
+<header class="position-fixed w-100 top-0 left-0 p-3">
+    <a class="d-block float-start" href="#">
+        <img style="width: 4rem; height: 4rem;" src="{{ asset('images/config-vector.svg')}}"/>
     </a>
-    <a class="btn-admin right exit" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        <img src="{{ asset('images/exit-vector.svg')}}"/>
+    <a class="d-block float-end" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <img style="width: 4rem; height: 4rem;" src="{{ asset('images/exit-vector.svg')}}"/>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
