@@ -26,7 +26,7 @@
 
         @yield('js-header')
     </head>
-    <body class="page-{{ Request::path() }}"> 
+    <body class="page-{{ Request::path() }} min-vh-100 d-flex flex-column"> 
         <h1 class="hidden-title">Slot Machine - {{ ucfirst(trans(Request::path())) }}</h1>
   
     
