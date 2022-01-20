@@ -23,10 +23,11 @@
 
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        
         @yield('js-header')
     </head>
-    <body class="page-{{ Request::path() }} min-vh-100 d-flex flex-column"> 
+    <body class="page-{{ Request::path() }} min-vh-100"> 
         <h1 class="hidden-title">Slot Machine - {{ ucfirst(trans(Request::path())) }}</h1>
   
     
